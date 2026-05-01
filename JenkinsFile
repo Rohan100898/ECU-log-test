@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Checkout') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name:'main']], extension: [], userRemoteConfigs: [[url:'https://github.com/Rohan100898/ECU-log-test.git']]])
+                checkout([$class: 'GitSCM', branches: [[name:'master']], extension: [], userRemoteConfigs: [[url:'https://github.com/Rohan100898/ECU-log-test.git']]])
             }
         }
         stage('Build') {
