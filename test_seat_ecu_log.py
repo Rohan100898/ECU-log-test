@@ -5,7 +5,7 @@ import pandas as pd
 # 📌 Fixture: Load log once for all tests
 @pytest.fixture(scope="module")
 def log_data():
-    df = pd.read_csv("seat_ecu_log_10min.csv")
+    df = pd.read_csv("seat_ecu_log_10min_updated.csv")
     return df
 
 
