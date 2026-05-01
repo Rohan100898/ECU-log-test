@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    stages{
+        stage('Checkout') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name:'main']], extension: [], userRemoteConfigs: [[url:'https://github.com/Rohan100898/ECU-log-test.git']]])
+            }
+        }
+        stage('Build') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Rohan100898/ECU-log-test.git'
+                // bat '"C:\\Users\\Acer\\AppData\\Local\\Programs\\Python\\Python311\\python.exe" calculator.py'
+            }
+        }
+        stage('Test') {
+            steps {
+                bat '"C:\\Users\\Acer\\AppData\\Local\\Programs\\Python\\Python311\\python.exe" -m pytest'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                bat '''
+                echo Deploying application...
+                mkdir "D:\\Workspace\\Deployed_projects\\ECU-log-test"
+                xcopy /E /I /Y * "D:\\Workspace\\Deployed_projects\\ECU-log-test"
+                '''
+            }
+        }
+    }
+}
