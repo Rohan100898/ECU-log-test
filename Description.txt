@@ -1,0 +1,66 @@
+Test Description – Seat ECU Log Validation
+
+****************************************************************************
+
+1. Log Data Fixture
+
+Loads the CSV log file once and provides a consistent dataset to all test cases. Fixtures in pytest help create a reusable and reliable test setup environment.
+
+****************************************************************************
+
+2. Error Status Check
+
+Validates that the log does not contain any entries marked as ERROR. Ensures the system operates without faults during the recorded session.
+
+****************************************************************************
+
+3. Value Range Validation
+
+Ensures all signal values are within valid limits:
+
+Percentage values: 0–100%
+Backrest angle: 0–60 degrees
+Detects invalid or unsafe signal values.
+
+****************************************************************************
+
+4. Missing Data Check
+
+Verifies that the log contains no null or missing values. Ensures data completeness and reliability.
+
+****************************************************************************
+
+5. Timestamp Order Check
+
+Confirms that all log entries are in chronological order. Prevents issues caused by unordered or corrupted logs.
+
+****************************************************************************
+
+6. Signal Validation
+
+Checks that only valid seat signals are present:
+
+seat_length
+seat_height
+backrest_angle
+Prevents unexpected or undefined signals.
+
+****************************************************************************
+
+7. Error Recovery Check
+
+Ensures that every ERROR entry is followed by a recovery (OK) state. Validates system fault recovery behavior.
+
+****************************************************************************
+
+8. Smooth Transition Check
+
+Validates that seat position changes occur gradually without abrupt jumps. Ensures realistic and safe actuator movement.
+
+****************************************************************************
+
+9. Final State Stability Check
+
+Verifies that the system ends in a stable (OK) condition. Confirms proper completion of seat adjustments.
+
+****************************************************************************
