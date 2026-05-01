@@ -16,7 +16,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                bat '"C:\\Users\\Acer\\AppData\\Local\\Programs\\Python\\Python311\\python.exe" -m pytest'
+                bat '"C:\\Users\\Acer\\AppData\\Local\\Programs\\Python\\Python311\\python.exe" -m pytest --html=ECU_Test_Report.html --self-contained-html'
             }
         }
 
