@@ -18,13 +18,13 @@ pipeline {
             steps {
                 bat '''
                 echo Checking Python...
-                python --version
+                "C:\\Users\\Acer\\AppData\\Local\\Programs\\Python\\Python311\\python.exe" --version
 
                 echo Installing dependencies...
-                pip install -r requirement.txt
+                "C:\\Users\\Acer\\AppData\\Local\\Programs\\Python\\Python311\\python.exe" -m pip install -r requirement.txt
 
                 echo Running tests...
-                python -m pytest --html=ECU_Test_Report.html --self-contained-html
+                "C:\\Users\\Acer\\AppData\\Local\\Programs\\Python\\Python311\\python.exe" -m pytest --html=ECU_Test_Report.html --self-contained-html
                 '''
             }
         }
