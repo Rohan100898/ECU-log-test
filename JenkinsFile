@@ -22,8 +22,8 @@ pipeline {
 
         stage('Test in Docker') {
             steps {
-                bat '/usr/bin/docker build -t ecu-log-test .'
-                bat '/usr/bin/docker run ecu-log-test'
+                bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe" build -t ecu-log-test .'
+                bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe" run ecu-log-test'
             }
         }
 
