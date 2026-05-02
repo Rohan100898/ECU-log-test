@@ -31,8 +31,8 @@ pipeline {
 
         stage('Test in Docker') {
             steps {
-                bat 'wsl docker build -t ecu-log-test .'
-                bat 'wsl docker run ecu-log-test'
+                bat 'docker build -t ecu-log-test .'
+                bat 'docker run ecu-log-test'
             }
         }
 
