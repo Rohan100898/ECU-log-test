@@ -84,3 +84,5 @@ def test_final_state_stable(log_data):
 
     assert all(last_entries["status"] == "OK"), \
         "Final state is not stable"
+    
+# End of test_seat_ecu_log.py
