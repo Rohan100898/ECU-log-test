@@ -6,6 +6,7 @@ import pandas as pd
 @pytest.fixture(scope="module")
 def log_data():
     df = pd.read_csv("seat_ecu_log_10min_updated.csv")
+    # df = pd.read_csv("seat_ecu_log_10min.csv")
     return df
 
 
